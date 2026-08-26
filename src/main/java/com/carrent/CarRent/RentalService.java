@@ -4,14 +4,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 
 @RestController
-public class HelloService
+public class RentalService
 {
     private HashMap<String, Car> cars;
     private HashMap<String, Car> rentedCars;
     private int test = 0;
 
 
-    public HelloService()
+    public RentalService()
     {
         cars = new HashMap<String, Car>();
         rentedCars = new HashMap<String, Car>();
@@ -45,7 +45,7 @@ public class HelloService
         return "rented :)";
     }
 
-    @GetMapping("/cars/recover{plateNumber}")
+    @GetMapping("/rented/recover{plateNumber}")
     public String recoverCar(@PathVariable("plateNumber") String plateNumber)
     {
         Car selectedCar = rentedCars.get(plateNumber);
