@@ -1,8 +1,14 @@
-package com.carrent.CarRent;
+package com.carrent.CarRent.data;
+import jakarta.persistence.*;
 
-@jakarta.persistence.Entity
+@Entity
 public class Car
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "car_seq")
+    @SequenceGenerator(name = "car_seq", sequenceName = "car_id_seq", allocationSize = 1)
+    private Long id;
+
     private String plateNumber;
     private String brand;
     private int price;
@@ -25,7 +31,6 @@ public class Car
     public void setBrand(String brand) {this.brand = brand;}
     public void setPrice(int price) {this.price = price;}
 
-    @jakarta.persistence.Id
     public String getPlateNumber() {return plateNumber;}
     public String getBrand() {return brand;}
     public int getPrice() {return price;}

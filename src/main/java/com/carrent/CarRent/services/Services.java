@@ -1,10 +1,9 @@
-package com.carrent.CarRent;
+package com.carrent.CarRent.services;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.HashMap;
 import java.util.NoSuchElementException;
+import com.carrent.CarRent.data.Car;
 
 @Service
 public class Services
@@ -24,7 +23,7 @@ public class Services
         cars.put(car3.getPlateNumber(), car3);
     }
 
-    public HashMap<String, Car> displayCars() {System.out.println("zrzr"); return cars;}
+    public HashMap<String, Car> displayCars() {return cars;}
     public HashMap<String, Car> displayRentedCars()
     {
         return rentedCars;
